@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>D&D Dice Roller</title>
+    <title>D&D Character Selector</title>
 </head>
 <body>
     <div id="app">
-        <h1>D&D Dice Roller</h1>
+        <h1 id="playerInfo">Select Players and Characters</h1>
 
-        <!-- Player Input -->
-        <button onclick="initializePlayers()">Initialize Players</button>
-        <button onclick="PlayerSelector()">Seleziona Personaggi</button>
+        <!-- Button to Select Characters -->
+        <button onclick="openCharacterSelectionModal()">Seleziona Personaggi</button>
 
+        <!-- Player Selector Dropdowns -->
+        <div id="playerSelectors"></div>
 
-        <!-- Dice Roller -->
-        <h2>Dice Roller</h2>
-        <label for="diceInput">Roll a d</label>
-        <input type="number" id="diceInput" min="1" value="20">
-        <button onclick="rollDice()">Roll</button>
-        <p id="diceResult"></p>
+        <!-- Display Additional Player Information -->
+        <div id="additionalInfo"></div>
 
-        <!-- Inventory -->
-        <h2>Inventory</h2>
-        <div id="inventory"></div>
+        <!-- Character Selection Modal -->
+        <div id="characterSelectionModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCharacterSelectionModal()">&times;</span>
+                <h2>Select Characters</h2>
+                <p>Choose the number of players and their characters:</p>
+                <input type="number" id="modalNumPlayers" min="1" value="1">
+                <button onclick="selectPlayers()">Select</button>
+            </div>
+        </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
