@@ -1,0 +1,35 @@
+[
+    {
+        "Peluso":
+        [
+            {
+                "Caracter":"Fravt",
+                "Stats":
+                {
+                    "surival":5
+                }
+            },
+            {
+                "Caracter":"Sort",
+                "Stats":
+                {
+                    "surival":0
+                }
+            }
+
+        ] 
+    },
+    {
+        "Padano":
+        [
+            {
+                "Caracter":"Hoid",
+                "Stats":
+                {
+                    "surival":-2
+                }
+            }
+
+        ] 
+    }
+]
