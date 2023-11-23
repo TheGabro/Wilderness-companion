@@ -1,6 +1,7 @@
-class Player {
-    constructor(name) {
+class Character {
+    constructor(name, stats) {
         this.name = name;
+        this.survival = stats["survival"]
     }
 
     rollDice(diceValue) {

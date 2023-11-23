@@ -1,35 +1,67 @@
 [
     {
-        "Peluso":
-        [
+        "Fravt":
             {
-                "Caracter":"Fravt",
-                "Stats":
+                "Stats": {
+                    "survival": 9
+                },
+                "Inventary":
                 {
-                    "surival":5
-                }
-            },
-            {
-                "Caracter":"Sort",
-                "Stats":
-                {
-                    "surival":0
+                    "Water":10,
+                    "Food":10
                 }
             }
-
-        ] 
     },
     {
-        "Padano":
-        [
+        "Hoid":
             {
-                "Caracter":"Hoid",
-                "Stats":
+                "Stats": {
+                    "survival": -2
+                },
+                "Inventary":
                 {
-                    "surival":-2
+                    "Water":5,
+                    "Food":15
                 }
             }
-
-        ] 
+    },
+    {
+        "Scaramango":
+            {
+                "Stats": {
+                    "survival": 8
+                },
+                "Inventary":
+                {
+                    "Water":5,
+                    "Food":15
+                }
+            }
+    },
+    {
+        "Thorgal":
+            {
+                "Stats": {
+                    "survival": -2
+                },
+                "Inventary":
+                {
+                    "Water":5,
+                    "Food":15
+                }
+            }
+    },
+    {
+        "Mr. Robotto":
+            {
+                "Stats": {
+                    "survival": 4
+                },
+                "Inventary":
+                {
+                    "Water":5,
+                    "Food":15
+                }
+            }
     }
 ]

@@ -22,6 +22,12 @@ p {
     font-weight: bold;
 }
 
+/* Add margin to the output area */
+#mainPageOutput {
+    margin-top: 15px; /* Adjust the value as needed */
+}
+
+
 /* Add this to your existing styles.css */
 
 /* The Modal (background) */

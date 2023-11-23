@@ -1,5 +1,5 @@
 // Sample JSON data for player characters
-const playerDatabase = [
+const characterDatabase = [
     {
         "Fravt":
             {
@@ -67,6 +67,7 @@ const playerDatabase = [
     }
 ];
 
+
 // Function to open the character selection modal
 function openCharacterSelectionModal() {
     const modal = document.getElementById('characterSelectionModal');
@@ -76,7 +77,7 @@ function openCharacterSelectionModal() {
     playerCheckboxesContainer.innerHTML = '';
 
     // Display player name with checkbox
-    playerDatabase.forEach(characterData => {
+    characterDatabase.forEach(characterData => {
         var characterName = Object.keys(characterData)[0];
 
         var playerCheckbox = document.createElement('input');
@@ -107,17 +108,27 @@ function closeCharacterSelectionModal() {
 function submitCharacterSelection() {
     const selectedCharacters = [];
 
-    // Get selected character
+    // Get selected characters
     const characterCheckboxes = document.querySelectorAll('[id^=characterCheckboxes]');
     characterCheckboxes.forEach(checkbox => {
         if (checkbox.checked) {
-            selectedCharacters.push(checkbox.value);
+            const characterName = checkbox.value;
+            const characterData = characterDatabase.find(data => data[characterName]);
+            if (characterData) {
+                const stats = characterData[characterName]["Stats"];
+                const character = new Character(characterName, stats);
+                selectedCharacters.push(character);
+            }
+
         }
     });
 
-    // Display the selected options (you can modify this part based on your requirements)
-    alert(`Selected Character: ${selectedCharacters.join(', ')}`);
+    // // Print the chosen characters on the main page
+    // const mainPageOutput = document.getElementById('mainPageOutput');
+    // selectedCharacters.forEach(name => {
+    //     });
+    // mainPageOutput.textContent = `Chosen Characters: ${selectedCharacters.join(', ')}`;
 
     // Close the modal
-    closeCharacterSelectionModal();
+    closeCharacterSelectionModal();      
 }
