@@ -8,10 +8,10 @@
 </head>
 <body>
     <div id="app">
-        <h1 id="playerInfo">Select Players and Characters</h1>
+        <h1 id="playerInfo">A serious Wilderness Helper</h1>
 
         <!-- Button to Select Characters -->
-        <button onclick="openCharacterSelectionModal()">Seleziona Personaggi</button>
+        <button onclick="openCharacterSelectionModal()">Setup Party</button>
 
         <!-- Player Selector Dropdowns -->
         <div id="playerSelectors"></div>
@@ -23,10 +23,17 @@
         <div id="characterSelectionModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeCharacterSelectionModal()">&times;</span>
-                <h2>Select Characters</h2>
-                <p>Choose the number of players and their characters:</p>
-                <input type="number" id="modalNumPlayers" min="1" value="1">
-                <button onclick="selectPlayers()">Select</button>
+                <h2 id="modalTitle">Select Characters</h2>
+                <div id="modalContent">
+                    <form id="characterSelectionForm">
+                        <!-- Player Checkboxes -->
+                        <fieldset><strong>Characters:</strong>
+                            <div id="characterCheckboxes"></div>
+                        </fieldset>
+                        <!-- Submit Button -->
+                        <button type="button" onclick="submitCharacterSelection()">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
