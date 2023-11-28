@@ -3,7 +3,10 @@
         "Fravt":
             {
                 "Stats": {
-                    "survival": 9
+                    "survival": 9,
+                    "wisdom" : 3,
+                    "diceSize" : 8
+
                 },
                 "Inventary":
                 {
@@ -16,7 +19,9 @@
         "Hoid":
             {
                 "Stats": {
-                    "survival": -2
+                    "survival": -1,
+                    "wisdom" : -1,
+                    "diceSize" : 4
                 },
                 "Inventary":
                 {
@@ -29,7 +34,9 @@
         "Scaramango":
             {
                 "Stats": {
-                    "survival": 8
+                    "survival": 8,
+                    "wisdom" : 3,
+                    "diceSize" : 6
                 },
                 "Inventary":
                 {
@@ -42,7 +49,9 @@
         "Thorgal":
             {
                 "Stats": {
-                    "survival": -2
+                    "survival": -1,
+                    "wisdom" : -1,
+                    "diceSize" : 4
                 },
                 "Inventary":
                 {
@@ -55,7 +64,9 @@
         "Mr. Robotto":
             {
                 "Stats": {
-                    "survival": 4
+                    "survival": 4,
+                    "wisdom" : 2,
+                    "diceSize" : 6
                 },
                 "Inventary":
                 {

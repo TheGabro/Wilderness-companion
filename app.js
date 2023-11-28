@@ -4,7 +4,10 @@ const characterDatabase = [
         "Fravt":
             {
                 "Stats": {
-                    "survival": 9
+                    "survival": 9,
+                    "wisdom" : 3,
+                    "diceSize" : 8
+
                 },
                 "Inventary":
                 {
@@ -17,7 +20,9 @@ const characterDatabase = [
         "Hoid":
             {
                 "Stats": {
-                    "survival": -2
+                    "survival": -1,
+                    "wisdom" : -1,
+                    "diceSize" : 4
                 },
                 "Inventary":
                 {
@@ -30,7 +35,9 @@ const characterDatabase = [
         "Scaramango":
             {
                 "Stats": {
-                    "survival": 8
+                    "survival": 8,
+                    "wisdom" : 3,
+                    "diceSize" : 6
                 },
                 "Inventary":
                 {
@@ -43,7 +50,9 @@ const characterDatabase = [
         "Thorgal":
             {
                 "Stats": {
-                    "survival": -2
+                    "survival": -1,
+                    "wisdom" : -1,
+                    "diceSize" : 4
                 },
                 "Inventary":
                 {
@@ -56,7 +65,9 @@ const characterDatabase = [
         "Mr. Robotto":
             {
                 "Stats": {
-                    "survival": 4
+                    "survival": 4,
+                    "wisdom" : 2,
+                    "diceSize" : 6
                 },
                 "Inventary":
                 {
@@ -123,6 +134,47 @@ function submitCharacterSelection() {
         }
     });
 
+    const selectedCharacterDisplay = document.getElementById('characterTableContainer');
+    selectedCharacterDisplay.innerHTML = '';
+    
+    const table = document.createElement('table');
+    table.classList.add('character-table');
+
+    const headerRow = table.insertRow(0);
+    const headerCell1 = headerRow.insertCell(0);
+    const headerCell2 = headerRow.insertCell(1);
+    const headerCell3 = headerRow.insertCell(2);
+    headerCell1.textContent = 'Character Info';
+    headerCell2.textContent = 'Water';
+    headerCell3.textContent = 'Food';
+
+    selectedCharacters.forEach(character => {
+        const row = table.insertRow(-1);
+        const cell1 = row.insertCell(0);
+        cell1.colSpan = 3;
+
+        const nestedTable = document.createElement('table');
+        nestedTable.classList.add('nested-table');
+
+        // First row in the nested table for Character Name
+        const nameRow = nestedTable.insertRow(0);
+        const nameCell = nameRow.insertCell(0);
+        nameCell.textContent = `${character.name}`;
+
+        // Second row in the nested table for Survival and Wisdom
+        const statsRow = nestedTable.insertRow(1);
+        const survivalCell = statsRow.insertCell(0);
+        const wisdomCell = statsRow.insertCell(1);
+        survivalCell.textContent = `Survival: ${character.survival}`;
+        wisdomCell.textContent = `Wisdom: ${character.wisdom}`;
+
+        cell1.appendChild(nestedTable);
+    });
+
+    selectedCharacterDisplay.appendChild(table)
+
+    // const mainPageOutput = document.getElementById('app');
+    // mainPageOutput.appendChild(table);
     // // Print the chosen characters on the main page
     // const mainPageOutput = document.getElementById('mainPageOutput');
     // selectedCharacters.forEach(name => {

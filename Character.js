@@ -1,7 +1,9 @@
 class Character {
     constructor(name, stats) {
         this.name = name;
-        this.survival = stats["survival"]
+        this.survival = stats["survival"];
+        this.wisdom = stats["wisdom"];
+        this.diceSize = stats["diceSize"] 
     }
 
     rollDice(diceValue) {

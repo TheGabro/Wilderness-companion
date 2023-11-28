@@ -69,3 +69,12 @@ p {
     cursor: pointer;
 }
 
+.nested-table {
+    width: 2%;
+    font-size: xx-small;
+}
+
+.nested-table td {
+    padding: 5px;
+}
+
