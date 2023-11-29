@@ -78,6 +78,8 @@ const characterDatabase = [
     }
 ];
 
+const selectedCharacters = [];
+
 
 // Function to open the character selection modal
 function openCharacterSelectionModal() {
@@ -117,7 +119,6 @@ function closeCharacterSelectionModal() {
 
 // Function to submit the character selection
 function submitCharacterSelection() {
-    const selectedCharacters = [];
 
     // Get selected characters
     const characterCheckboxes = document.querySelectorAll('[id^=characterCheckboxes]');
