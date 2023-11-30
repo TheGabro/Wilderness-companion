@@ -78,6 +78,8 @@ const characterDatabase = [
     }
 ];
 
+const selectedCharacters = [];
+
 
 // Function to open the character selection modal
 function openCharacterSelectionModal() {
@@ -117,7 +119,7 @@ function closeCharacterSelectionModal() {
 
 // Function to submit the character selection
 function submitCharacterSelection() {
-    const selectedCharacters = [];
+    
     // Get selected characters
     const characterCheckboxes = document.querySelectorAll('[id^=characterCheckboxes]');
     characterCheckboxes.forEach(checkbox => {
@@ -135,7 +137,7 @@ function submitCharacterSelection() {
 
     const selectedCharacterDisplay = document.getElementById('characterTableContainer');
     selectedCharacterDisplay.innerHTML = '';
-    
+
     const table = document.createElement('table');
     table.classList.add('character-table');
 
