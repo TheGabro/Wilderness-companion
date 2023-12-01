@@ -80,6 +80,26 @@ const characterDatabase = [
 
 const selectedCharacters = [];
 
+function createButton() {
+    // Create a button element
+    const myButton = document.createElement('button');
+
+    // Set button attributes
+    myButton.textContent = 'Roll Dice!'; // Set the button text
+    myButton.id = 'myDynamicButton'; // Set a unique identifier (optional)
+
+    // Add a click event listener to the button
+    myButton.addEventListener('click', function() {
+        selectedCharacters.forEach(character =>{
+            rollDice()
+        })
+        
+    });
+
+    // Append the button to an existing HTML element (e.g., the body)
+    document.body.appendChild(myButton);
+}
+
 
 // Function to open the character selection modal
 function openCharacterSelectionModal() {
@@ -151,15 +171,17 @@ function submitCharacterSelection() {
 
     selectedCharacters.forEach(character => {
         const row = table.insertRow(-1);
-        const cell1 = row.insertCell(0);
-        cell1.colSpan = 3;
 
+        // Cell for Character Info
+        const cell1 = row.insertCell(0);
+        cell1.classList.add('player-info'); // Add player-info class for styling
         const nestedTable = document.createElement('table');
         nestedTable.classList.add('nested-table');
 
         // First row in the nested table for Character Name
         const nameRow = nestedTable.insertRow(0);
         const nameCell = nameRow.insertCell(0);
+        nameCell.colSpan = 2; // Set colSpan for the entire row
         nameCell.textContent = `${character.name}`;
 
         // Second row in the nested table for Survival and Wisdom
@@ -170,9 +192,15 @@ function submitCharacterSelection() {
         wisdomCell.textContent = `Wisdom: ${character.wisdom}`;
 
         cell1.appendChild(nestedTable);
+
+        // Cells for Water and Food
+        const cell2 = row.insertCell(1);
+        const cell3 = row.insertCell(2);
     });
 
     selectedCharacterDisplay.appendChild(table)
+
+    
 
     // const mainPageOutput = document.getElementById('app');
     // mainPageOutput.appendChild(table);
@@ -183,5 +211,16 @@ function submitCharacterSelection() {
     // mainPageOutput.textContent = `Chosen Characters: ${selectedCharacters.join(', ')}`;
 
     // Close the modal
-    closeCharacterSelectionModal();      
+    closeCharacterSelectionModal();
+    createButton()     
+}
+
+function rollDice(){
+    const app = document.getElementById('app');
+    const newP = document.createElement("p");
+    newP.textContent = "Hello, World!";
+    newP.style.backgroundColor = "blue";
+    newP.style.color = "white";
+    newP.style.padding = "10px";
+    app.appendChild(newP)
 }

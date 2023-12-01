@@ -69,12 +69,64 @@ p {
     cursor: pointer;
 }
 
-.nested-table {
-    width: 2%;
-    font-size: xx-small;
+/* Style the main table */
+.character-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Adjust as needed */
 }
 
-.nested-table td {
-    padding: 5px;
+/* Style header cells */
+.character-table th {
+    background-color: #9b2e2e;
+    border: 1px solid #f2f2f2;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style data cells */
+.character-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+/* Style the inner table within player info cells */
+.nested-table {
+    background-color: #ab9595;
+    border: 1px solid #985e5e;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+/* Style player info cells */
+.player-info {
+    padding: 0; /* Remove padding for player info cells */
+    position: relative; /* Enable relative positioning for inner table */
+}
+
+/* Style the first row of the inner table */
+.nested-table tr:nth-child(1) {
+    background-color: #e6e6e6;
+}
+
+/* Style the second row of the inner table */
+.nested-table tr:nth-child(2) {
+    background-color: #f2f2f2;
+}
+
+/* Style the dividing lines between columns */
+.character-table td, .character-table th {
+    position: relative;
+}
+
+/* Add a line between columns */
+.character-table td:not(:last-child):after, .character-table th:not(:last-child):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #dddadd; /* Color of the dividing line */
 }
 
